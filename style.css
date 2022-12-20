@@ -15,52 +15,76 @@ body {
     line-height: 1.5;
 }
 
-#login {
+.login {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-div.user, div.pass {
-    margin-bottom: .625em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 .submit-btn {
-    margin-top: 1em;
-}
-
-#submitBtn {
     padding: 0 0 0 .0625em;
     border: none;
     background: transparent;
     color: #808080;
-    font-size: 1em;
+    font-size: 1.125em;
     float: right;
 }
 
-input {
+.submit-btn:hover {
+    color: #829AB4;
+}
+
+.input {
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     padding: .5em 0;
     width: 15em;
     background: none;
     border: none;
-    border-bottom: solid .125em #343434;
+    border-bottom: solid .2em #343434;
     color: #f8f4f8;
     font-weight: 500;
+    font-size: 16px;
+    letter-spacing: .05em;
 }
 
-input:placeholder-shown {
+.input:placeholder-shown {
     font-style: italic;
 }
 
-input:focus, input:valid {
+.input:focus, .input:valid {
     outline: 0;
-    border-bottom-color: #343434;
+    border-bottom-color: #829AB4;
 }
 
 label {
+    font-style: italic;
     font-weight: 500;
-    letter-spacing: .035em;
+    font-size: 16px;
+    color: #808080;
+    letter-spacing: .0675em;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.user-label {
+    top: 7px;
+}
+
+.pass-label {
+    top: 77px;
+}
+
+.input:focus + label,
+.input:valid + label {
+    transform: translateY(-25px);
+    color:#829AB4;
+    font-size: 14px;
+    font-weight: 600;
 }
